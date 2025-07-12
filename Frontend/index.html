@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skill Swap Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SCREEN 1: HOMEPAGE -->
+<div id="homeScreen" class="container active">
+  <div class="header">
+    <h2 class="logo">Skill Swap Platform</h2>
+    <div class="nav-buttons">
+      <button class="btn" onclick="showScreen('loginScreen')">Login</button>
+      <button class="btn" onclick="showScreen('profileScreen')">My Profile</button>
+    </div>
+  </div>
+  <div class="search-bar">
+    <select><option>Availability</option><option>Available Now</option><option>Weekends</option></select>
+    <input type="text" placeholder="Search...">
+  </div>
+  <div class="card">
+    <div class="profile-info">
+      <div class="profile-photo">M</div>
+      <div>
+        <strong>Marc Demo</strong><br>
+        <small>Skills Offered:</small> <span>JavaScript</span> <span>Python</span><br>
+        <small>Skills Wanted:</small> <span>Photoshop</span><br>
+        Rating: 3.9 / 5
+      </div>
+    </div>
+    <button class="btn" onclick="showScreen('viewProfileScreen')">Request</button>
+  </div>
+  <div class="card">
+    <div class="profile-info">
+      <div class="profile-photo">M</div>
+      <div>
+        <strong>Mitchell</strong><br>
+        <small>Skills Offered:</small> <span>Python</span><br>
+        <small>Skills Wanted:</small> <span>Graphics</span><br>
+        Rating: 2.5 / 5
+      </div>
+    </div>
+    <button class="btn" onclick="showScreen('viewProfileScreen')">Request</button>
+  </div>
+  <div class="pagination">
+    <span>&lt;</span><span class="active">1</span><span>2</span><span>3</span><span>&gt;</span>
+  </div>
+</div>
+
+<!-- SCREEN 2: LOGIN -->
+<div id="loginScreen" class="container">
+  <div class="header">
+    <h2 class="logo">Skill Swap Platform</h2>
+    <button class="btn" onclick="showScreen('homeScreen')">Home</button>
+  </div>
+  <form class="login-form" onsubmit="loginUser(event)">
+    <label>Email</label>
+    <input type="email" id="loginEmail" required>
+    <label>Password</label>
+    <input type="password" id="loginPassword" required>
+    <button type="submit" class="btn">Login</button>
+    <span class="forgot">Forgot username/password?</span>
+  </form>
+</div>
+
+<!-- SCREEN 3: PROFILE -->
+<div id="profileScreen" class="container">
+  <div class="header">
+    <h2 class="logo">Skill Swap Platform</h2>
+    <div class="nav-buttons">
+      <button class="btn">Save</button>
+      <button class="btn">Discard</button>
+      <button class="btn" onclick="showScreen('homeScreen')">Home</button>
+    </div>
+  </div>
+  <form class="profile-form">
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" value="Gleaming Caribou">
+    </div>
+    <div class="form-group">
+      <label>Location:</label>
+      <input type="text">
+    </div>
+    <div class="form-group">
+      <label>Skills Offered:</label>
+      <input type="text" value="Graphic Design, Video Editing">
+    </div>
+    <div class="form-group">
+      <label>Skills Wanted:</label>
+      <input type="text" value="Python, JavaScript">
+    </div>
+    <div class="form-group">
+      <label>Availability:</label>
+      <input type="text" value="Weekends">
+    </div>
+    <div class="form-group">
+      <label>Profile:</label>
+      <select><option>Public</option><option>Private</option></select>
+    </div>
+  </form>
+</div>
+
+<!-- SCREEN 4: VIEW PROFILE -->
+<div id="viewProfileScreen" class="container">
+  <div class="header">
+    <h2 class="logo">Skill Swap Platform</h2>
+    <div class="nav-buttons">
+      <button class="btn" onclick="showScreen('swapRequestScreen')">Swap request</button>
+      <button class="btn" onclick="showScreen('homeScreen')">Home</button>
+    </div>
+  </div>
+  <div style="text-align:center;">
+    <button class="btn" onclick="showScreen('swapFormScreen')">Request</button>
+    <h3>Marc Demo</h3>
+    <p>Skills Offered: JavaScript, Python</p>
+    <p>Skills Wanted: Photoshop, Graphic Design</p>
+    <div class="profile-photo" style="margin:auto;">M</div>
+    <p>Rating and Feedback</p>
+  </div>
+</div>
+
+<!-- SCREEN 5: REQUEST FORM -->
+<div id="swapFormScreen" class="container">
+  <h2>Request Skill Swap</h2>
+  <form class="request-form">
+    <label>Choose one of your offered skills</label>
+    <select><option>JavaScript</option></select>
+    <label>Choose one of their wanted skills</label>
+    <select><option>Photoshop</option></select>
+    <label>Message</label>
+    <textarea rows="4"></textarea>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</div>
+
+<!-- SCREEN 6: SWAP REQUEST LIST -->
+<div id="swapRequestScreen" class="container">
+  <div class="header">
+    <h2 class="logo">Skill Swap Platform</h2>
+    <button class="btn" onclick="showScreen('homeScreen')">Home</button>
+  </div>
+  <div class="search-bar">
+    <select><option>Pending</option><option>Accepted</option><option>Rejected</option></select>
+    <input type="text" placeholder="Search...">
+  </div>
+  <div class="card">
+    <div class="profile-info">
+      <div class="profile-photo">M</div>
+      <div>
+        <strong>Marc Demo</strong><br>
+        Skills Offered: JavaScript<br>
+        Skills Wanted: Photoshop<br>
+        Rating: 3.9/5
+      </div>
+    </div>
+    <div class="status">
+      <span>Pending</span>
+      <span class="accept">Accept</span>
+      <span class="reject">Reject</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showScreen(screenId) {
+    document.querySelectorAll('.container').forEach(c => c.classList.remove('active'));
+    document.getElementById(screenId).classList.add('active');
+  }
+
+  async function loginUser(event) {
+    event.preventDefault();
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        localStorage.setItem("token", data.token);
+        alert("✅ Login successful!");
+        showScreen("homeScreen");
+      } else {
+        alert(`❌ Login failed: ${data.msg || "Invalid credentials"}`);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("⚠️ Server error");
+    }
+  }
+</script>
+</body>
+</html>
