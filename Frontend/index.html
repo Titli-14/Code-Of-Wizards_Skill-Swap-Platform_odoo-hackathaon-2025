@@ -117,10 +117,30 @@
     <h3>Marc Demo</h3>
     <p>Skills Offered: JavaScript, Python</p>
     <p>Skills Wanted: Photoshop, Graphic Design</p>
-    <div class="profile-photo" style="margin:auto;">M</div>
-    <p>Rating and Feedback</p>
-  </div>
+    <div class="profile-photo" style="margin:auto;"></div>
+    <button>Rating and Feedback</button>
+<div>
+    <!-- Rating input -->
+    <label for="rating">Rate this user:</label><br>
+    <select id="rating" name="rating">
+        <option value="">--Select--</option>
+        <option value="1">★☆☆☆☆ </option>
+        <option value="2">★★☆☆☆ </option>
+        <option value="3">★★★☆☆ </option>
+        <option value="4">★★★★☆ </option>
+        <option value="5">★★★★★ </option>
+    </select><br><br>
+
+    <!-- Feedback input -->
+    <label for="feedback">Your Feedback:</label><br>
+    <textarea id="feedback" name="feedback" rows="4" cols="50" placeholder="Write your feedback here"></textarea><br><br>
+
+    <button type="submit">Submit</button>
+    </div>
 </div>
+
+   
+
 
 <!-- SCREEN 5: REQUEST FORM -->
 <div id="swapFormScreen" class="container">

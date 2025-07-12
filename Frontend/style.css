@@ -6,6 +6,32 @@ body {
   margin: 0;
   padding: 0;
 }
+#rating, #feedback {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 400px;
+    background-color: #1e1e1e; /* match dark theme */
+    color: white;
+}
+label {
+    font-weight: bold;
+    color: white;
+}
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
 
 .container {
   max-width: 960px;
