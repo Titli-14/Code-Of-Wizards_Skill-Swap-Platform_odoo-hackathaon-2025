@@ -1,6 +1,6 @@
 # Code-Of-Wizards_Skill-Swap-Platform_odoo-hackathaon-2025
 
-Team Name : Code-Of-Wizards || Problem Statement : Skill-Swap-Platform ||
+Team Name : Code Of Wizards || Problem Statement : Skill-Swap-Platform ||
 
 Team Leader : Titli Dutta || Email address : titlidutta2k20@gmail.com||
 
